@@ -61,7 +61,11 @@ public class RobotPlayer extends PlayerHand {
 		Table table = ConcreteTable.getInstance();
 		if(!isDebug) {
 			table.startTimer();
-			delay();
+			try {
+				Thread.sleep((int)(Math.random()*3000)+2000);
+			} catch(InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		if(prev==null) {
 			int i=0;
@@ -82,7 +86,11 @@ public class RobotPlayer extends PlayerHand {
 	public boolean call() {
 		if(!isDebug) {
 			ConcreteTable.getInstance().startTimer();
-			delay();
+			try {
+				Thread.sleep((int)(Math.random()*3000)+2000);
+			} catch(InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		return Math.random()<0.5;
 	}
