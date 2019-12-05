@@ -20,17 +20,6 @@ public class RobotPlayer extends PlayerHand {
 	private boolean isDebug=false;
 	
 	/**
-	 * Randomly delay between 3 seconds to 5 seconds.
-	 */
-	private void delay() {
-		try {
-			Thread.sleep((int)(Math.random()*3000)+2000);
-		} catch(InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
 	 * Using depth-first-search to find any suitable pokerhand
 	 * @param remCards The remaining cards to be searched.
 	 * @param comb The current combination.
@@ -52,6 +41,18 @@ public class RobotPlayer extends PlayerHand {
 		 	comb.remove(c);
 	    }
 		return null;
+	}
+	
+	
+	/**
+	 * Randomly delay between 3 seconds to 5 seconds.
+	 */
+	private void delay() {
+		try {
+			Thread.sleep((int)(Math.random()*3000)+2000);
+		} catch(InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
